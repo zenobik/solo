@@ -60,7 +60,7 @@ void hw_init(void);
 // Which will take ~8 * (30)*2 ms
 
 // Button
-#define SOLO_BUTTON_PORT        GPIOA
+#define SOLO_BUTTON_PORT        GPIOB
 #define SOLO_BUTTON_PIN         LL_GPIO_PIN_0
 
 #define SKIP_BUTTON_CHECK_WITH_DELAY        0

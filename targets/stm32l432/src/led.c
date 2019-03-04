@@ -34,9 +34,9 @@ uint32_t led_normalization(uint8_t value)
 
 void led_rgb(uint32_t hex)
 {
-    uint32_t r = led_normalization((hex >> 16) & 0xff);
+    uint32_t r = 0;//led_normalization((hex >> 16) & 0xff);
     uint32_t g = led_normalization((hex >> 8) & 0xff);
-    uint32_t b = led_normalization(hex & 0xff);
+    uint32_t b = 0;//led_normalization(hex & 0xff);
 
     // CCR2 == blue
     // CCR3 == red
@@ -44,9 +44,7 @@ void led_rgb(uint32_t hex)
 
     // map and scale colors
 	// normalization table values: value * 10
-    TIM2->CCR2 = 1000 - (b * 100)/(256);
-    TIM2->CCR3 = 1000 - (r * 100)/(256*6);
-    TIM2->CCR4 = 1000 - (g * 100)/(256);
+    TIM2->CCR2 = 1000 - (g * 100)/(256);
 }
 
 void led_test_colors()
